@@ -16,3 +16,4 @@ Note: this would only do a simulation run. Specify --force to actually delete th
 
 Author: John Quinn, http://johnandcailin.com/john
 ```
+Now Python 3 compatible.
