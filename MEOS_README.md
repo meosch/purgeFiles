@@ -16,7 +16,7 @@ ages="1,7,14,21,28,56,84"
 ### python
 On the MEOS Backups Server the administrator had Linux superuser access and could install any needed programs. At Kreativmedia the `ssh` access is a chrooted shell that is very limited in what the user can do. This situation is very unfriendly for a modern developer. Maybe a decade ago Kreativmedia chroot setup would have been considered on the cutting edge, but I digress.
 
-`purgeFiles` needs python to run, but this is not installed on the Kreativmedia web hosting or if it is, it is not made available in the chrooted shell. A portable python was found and downloaded from [indygreg/python-build-standalone](https://github.com/indygreg/python-build-standalone) from the projects [releases page](https://github.com/indygreg/python-build-standalone/releases).
+`purgeFiles` needs python to run, but this is not installed on the Kreativmedia web hosting or if it is, it is not made available in the chrooted shell. A portable python was found and downloaded from [indygreg/python-build-standalone](https://github.com/indygreg/python-build-standalone) from the projects [releases page](https://github.com/indygreg/python-build-standalone/releases). How to install python-build-standalone can be found on [its documentation page](https://python-build-standalone.readthedocs.io/en/latest/running.html).
 
 ### cron and crontab (or lack thereof)
 The chrooted shell at Kreativmedia is lacking the crontab program so editing cron jobs in the traditional way is not possible. Their Plesk control panel "Scheduled Tasks" offers very limited `cron` functionality. Mostly in that you can enter the job scheduling in a cron format.
