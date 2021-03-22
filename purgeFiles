@@ -189,7 +189,7 @@ def purge(directory, pattern, ages, force):
 
     # go through each file in the directory and ensure that it's a keeper
     ages_iterator = iter(ages_list)
-    current_desired_age = ages_iterator.next()
+    current_desired_age = ages_iterator.__next__()
     completed_desired_ages = False
 
     print("finding files matching pattern %s of ages %s in directory %s" % (pattern, ages, directory))
@@ -221,7 +221,7 @@ def purge(directory, pattern, ages, force):
             print('%s: keeping this file of age %d days to satisfy age %d days' % (
                 file[2], file_age_days, current_desired_age))
             try:
-                current_desired_age = ages_iterator.next()
+                current_desired_age = ages_iterator.__next__()
             except StopIteration:
                 completed_desired_ages = True
 
@@ -230,7 +230,7 @@ def purge(directory, pattern, ages, force):
         while True:
             print('no file to satisfy age %d' % current_desired_age)
             try:
-                current_desired_age = ages_iterator.next()
+                current_desired_age = ages_iterator.__next__()
             except StopIteration:
                 break
 
